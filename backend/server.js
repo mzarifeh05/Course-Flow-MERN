@@ -23,6 +23,11 @@ app.use("/", authRoutes);
 app.use("/courses", courseRoutes);
 app.use("/users", userRoutes);
 
+// Health check route (used by uptime monitor)
+app.get("/api/health", (req, res) => {
+   res.status(200).send("Server is alive ✅");
+});
+
 /* =========================
    START SERVER
 ========================= */
