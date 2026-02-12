@@ -89,7 +89,3 @@ When a student enrolls:
 - User schema adds course ID
 
 This creates a **bi-directional relationship** between users and courses.
-
----
-
-## 🗂️ Project Structure
