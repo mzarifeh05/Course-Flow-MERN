@@ -1,0 +1,116 @@
+/* Full page gradient background */
+.pageContainer {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Gradient from your blue #00b0fe to a slightly darker shade */
+    background: linear-gradient(135deg, #00b0fe 0%, #008cba 100%);
+    padding: 20px;
+}
+
+.formContainer {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.formContainer h2 {
+    color: rgb(50, 50, 50);
+    margin: 0;
+}
+
+.subtitle {
+    color: rgb(150, 150, 150);
+    margin-top: -10px;
+    font-size: 0.9rem;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.inputGroup label {
+    font-weight: bold;
+    font-size: 0.9rem;
+    color: rgb(80, 80, 80);
+}
+
+.inputGroup input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid rgb(230, 230, 230);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Gradient border effect on focus */
+.inputGroup input:focus {
+    border-color: #00b0fe;
+    box-shadow: 0 0 5px rgba(0, 176, 254, 0.3);
+}
+
+.errorInput {
+    border-color: #ff4d4f !important;
+}
+
+.errorMsg {
+    color: #ff4d4f;
+    font-size: 0.8rem;
+}
+
+.submitBtn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    background: linear-gradient(90deg, #00b0fe 0%, #0099db 100%);
+    transition: transform 0.2s;
+    margin-top: 10px;
+}
+
+.submitBtn:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 176, 254, 0.4);
+}
+
+.submitBtn:active {
+    transform: scale(0.98);
+}
+
+.footerText {
+    font-size: 0.9rem;
+    color: rgb(100, 100, 100);
+    margin-top: 15px;
+}
+
+.footerText a {
+    color: #00b0fe;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footerText a:hover {
+    text-decoration: underline;
+}

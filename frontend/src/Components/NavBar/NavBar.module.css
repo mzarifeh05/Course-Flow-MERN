@@ -1,0 +1,138 @@
+.container>img {
+    width: 150px;
+}
+
+.container>img:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+.container>img:active {
+    transform: scale(0.9);
+    opacity: 1;
+}
+
+.container {
+    display: flex;
+    color: rgb(50, 50, 50);
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: solid 2px rgb(100, 100, 100);
+    width: 80%;
+    margin: auto;
+}
+
+.container .boxes, 
+.container .boxes .box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .boxes .box p {
+    padding: 0 15px;
+    font-weight: bolder;
+}
+
+.container .boxes .box:hover {
+    cursor: pointer;
+    color: rgb(100, 100, 100);
+}
+
+.container .boxes .box:active {
+    transform: scale(0.9);
+}
+
+@media (max-width: 750px) {
+    .container {
+        width: 95%;
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px 0;
+    }
+    .container>img {
+        width: 90px;
+    }
+    .container .boxes .box img {
+        width: 25px;
+    }
+    .container .boxes .box p {
+        font-size: 0.8rem;
+        padding: 0 5px;
+    }
+}
+
+/* NavBar.module.css */
+
+/* Dark background overlay */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* The white popup box */
+.modalContent {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.modalContent h3 {
+    margin-top: 0;
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* Button container */
+.modalButtons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+/* The "Yes" button (Theme Color) */
+.confirmBtn {
+    background-color: #00b0fe;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s;
+}
+
+.confirmBtn:hover {
+    background-color: #008ccb;
+}
+
+/* The "No" button */
+.cancelBtn {
+    background-color: #e0e0e0;
+    color: #333;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cancelBtn:hover {
+    background-color: #d0d0d0;
+}
