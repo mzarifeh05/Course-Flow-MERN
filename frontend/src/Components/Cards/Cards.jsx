@@ -10,6 +10,7 @@ const Cards = ({ courses = [], setSelectedCourse, getCourses }) => {
     const [enrolledMap, setEnrolledMap] = useState({});
     const [role, setRole] = useState(null);
     const [userId, setUserId] = useState(null);
+    const [isLoading, setIsLoading] = useState(true); // Add loading state
 
     const [showParticipantsModal, setShowParticipantsModal] = useState(false);
     const [currentParticipants, setCurrentParticipants] = useState([]);
@@ -38,6 +39,12 @@ const Cards = ({ courses = [], setSelectedCourse, getCourses }) => {
             });
             setEnrolledMap(initialEnrollment);
         }
+        
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 500);
+
+        return () => clearTimeout(timer);
     }, [courses, userId]);
 
     const handleEnrollToggle = async (courseId) => {
@@ -106,6 +113,27 @@ const Cards = ({ courses = [], setSelectedCourse, getCourses }) => {
             setLoadingParticipants(false);
         }
     };
+
+    if (isLoading) {
+        return (
+            <div className={style.overlay} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+                <div style={{
+                    border: '4px solid #f3f3f3',
+                    borderTop: '4px solid #3498db',
+                    borderRadius: '50%',
+                    width: '50px',
+                    height: '50px',
+                    animation: 'spin 1s linear infinite'
+                }}></div>
+                <style>{`
+                    @keyframes spin {
+                        0% { transform: rotate(0deg); }
+                        100% { transform: rotate(360deg); }
+                    }
+                `}</style>
+            </div>
+        );
+    }
 
     return (
         <div className={style.overlay}>
